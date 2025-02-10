@@ -1,0 +1,10 @@
+/* Responsive table headings */
+.responsive-th {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 576px) {
+  .responsive-th {
+    font-size: 0.9rem;
+  }
+}

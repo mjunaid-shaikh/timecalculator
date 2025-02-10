@@ -1,4 +1,4 @@
-.header {
+/* .header {
      background-color: #3C486B;
      padding: 15px 0;
      color: white;
@@ -68,4 +68,62 @@
      .menu-toggle {
           display: block;
      }
+} */
+
+.header {
+  background-color: #3c486b;
+  padding: 15px 0;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #ffcc00;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Offcanvas Sidebar */
+.offcanvas {
+  width: 250px;
+}
+
+.offcanvas .nav ul {
+  padding: 0;
+}
+
+.offcanvas .nav a {
+  color: white;
+  font-size: 18px;
+}
+
+.offcanvas .nav a:hover {
+  color: #ffcc00;
 }
