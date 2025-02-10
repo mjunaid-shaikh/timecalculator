@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="container">
+     <div class="row" style="border: 1px solid green;margin: 1rem;">
+          <div class="col-md-12">
+               <div class="timerBox" style="text-align: center; margin: 1rem;">
+                    <div style="margin: 0.5rem;">
+                         <p style="font-size: 48px; font-weight: bold;">{{ displayTime }}</p>
+                    </div>
+                    <div style="margin: 0.5rem;">
+                         <button mat-raised-button color="primary" class="btn btn-primary"
+                              (click)="play()">Play</button>&nbsp;
+                         <button mat-raised-button color="warn" class="btn btn-warning"
+                              (click)="pause()">Pause</button>&nbsp;
+                         <button mat-raised-button color="accent" class="btn btn-danger"
+                              (click)="reset()">Reset</button>&nbsp;
+                         <button mat-raised-button color="accent" class="btn btn-info" (click)="lap()">Lap</button>
+                    </div>
+               </div>
+               <div>
+                    <h3>Lap Times</h3>
+                    <table class="table table-bordered table-striped">
+                         <thead class="thead-dark">
+                              <tr>
+                                   <th>No.</th>
+                                   <th>Lap Time</th>
+                                   <th>Elapsed Time</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <tr *ngFor="let lap of lapTimes; let i = index">
+                                   <td>{{ i + 1 }}</td>
+                                   <td>{{ lap.lapTime }}</td>
+                                   <td>{{ lap.elapsedTime }}</td>
+                              </tr>
+                         </tbody>
+                    </table>
+               </div>
+          </div>
+     </div>
+</div>
