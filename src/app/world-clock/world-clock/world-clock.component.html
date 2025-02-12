@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="container my-3">
+     <div *ngFor="let timeZone of timeZones" class="card">
+          <h3>{{ timeZone.country }}</h3>
+          <p>UTC {{ timeZone.utcOffset >= 0 ? '+' : '' }}{{ timeZone.utcOffset }}</p>
+          <p>Current Time: {{ timeZone.time }}</p>
+     </div>
+</div>

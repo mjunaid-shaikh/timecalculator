@@ -29,6 +29,13 @@ const routes: Routes = [
     loadChildren: () => import('./time/time.module').then((m) => m.TimeModule),
   },
   {
+    path: 'world-clock',
+    loadChildren: () =>
+      import('./world-clock/world-clock.module').then(
+        (m) => m.WorldClockModule
+      ),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },
