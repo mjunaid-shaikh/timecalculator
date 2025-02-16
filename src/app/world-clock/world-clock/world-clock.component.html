@@ -1,6 +1,9 @@
 <app-header></app-header>
+<div class="col-md-6 my-5 d-flex justify-content-center" style="margin: auto;">
+     <input class="form-control" id="exampleDataList" placeholder="Type to search..." [(ngModel)]="searchText" />
+</div>
 <div class="container my-3">
-     <div *ngFor="let timeZone of timeZones" class="card">
+     <div *ngFor="let timeZone of timeZones | searchFilter:searchText" class="card">
           <h3>{{ timeZone.country }}</h3>
           <p>UTC {{ timeZone.utcOffset >= 0 ? '+' : '' }}{{ timeZone.utcOffset }}</p>
           <p>Current Time: {{ timeZone.time }}</p>

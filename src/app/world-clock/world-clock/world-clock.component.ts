@@ -8,6 +8,7 @@ import { TimeZoneService } from 'src/app/services/time-zone.service';
 })
 export class WorldClockComponent implements OnInit {
   timeZones: any[] = [];
+  searchText: string = '';
 
   constructor(private timeZoneService: TimeZoneService) {}
   ngOnInit() {

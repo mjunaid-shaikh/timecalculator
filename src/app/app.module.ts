@@ -8,6 +8,8 @@ import { FooterComponent } from './common-components/footer/footer.component';
 import { PageNotFoundComponent } from './common-components/page-not-found/page-not-found.component';
 import { DashboardComponent } from './common-components/dashboard/dashboard.component';
 import { SharedModule } from './shared/shared.module';
+// import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,9 @@ import { SharedModule } from './shared/shared.module';
     FooterComponent,
     PageNotFoundComponent,
     DashboardComponent,
+    // SearchFilterPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
