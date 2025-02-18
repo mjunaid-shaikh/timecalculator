@@ -1,7 +1,8 @@
 <app-header></app-header>
-<div class="col-md-6 my-5 d-flex justify-content-center" style="margin: auto;">
+<div class="col-md-6 my-5 mx-3 mx-sm-auto d-flex justify-content-center">
      <input class="form-control" id="exampleDataList" placeholder="Type to search..." [(ngModel)]="searchText" />
 </div>
+
 <div class="container my-3">
      <div *ngFor="let timeZone of timeZones | searchFilter:searchText" class="card">
           <h3>{{ timeZone.country }}</h3>

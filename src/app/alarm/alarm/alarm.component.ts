@@ -198,16 +198,26 @@ export class AlarmComponent implements OnInit {
 
   startAlarmCountdown() {
     const interval = setInterval(() => {
-      this.activeAlarms.forEach((alarm, index) => {
+      let activeCount = 0; // Track active alarms
+
+      this.activeAlarms.forEach((alarm) => {
+        if (alarm.completed) return; // Skip already completed alarms
+
         let remainingTime = this.calculateRemainingTime(alarm);
         if (remainingTime === '0:0') {
           this.playAlarm();
-          this.activeAlarms[index].remainingTime = '00:00:00'; // Display 00:00:00
-          clearInterval(interval); // Stop countdown
+          alarm.remainingTime = '00:00:00'; // Display 00:00:00
+          alarm.completed = true; // Mark the alarm as completed
         } else {
-          this.activeAlarms[index].remainingTime = remainingTime;
+          alarm.remainingTime = remainingTime;
+          activeCount++; // Count active alarms
         }
       });
+
+      // Stop the interval if no active alarms are left
+      if (activeCount === 0) {
+        clearInterval(interval);
+      }
     }, 1000);
   }
 
